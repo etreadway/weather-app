@@ -1,0 +1,18 @@
+body {
+    background-color: #15202B;
+}
+
+#info-container {
+    background-color: #404040;
+    height:  = 200px;
+}
+
+.search-container {
+    margin: 10px;
+}
+
+
+
+.alert-danger {
+    display: none;
+}
