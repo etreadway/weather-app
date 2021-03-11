@@ -16,8 +16,9 @@ buttonObj.addEventListener('click', function() {
         console.log(data)
         document.getElementById('weather').innerHTML = data.weather['0'].description
         document.getElementById('temperature').innerHTML = Math.round(data.main.temp) + '&#8457'
+        document.getElementById('temperature').innerHTML = Math.round(data.main.feels_like) + '&#8457'
         document.getElementById('city').innerHTML = data.name
-        document.getElementById('weather-icon').src = 'http://openweathermap.org/img/wn/'+ data.weather[0].icon +'.png'
+        document.getElementById('weather-icon').src = 'http://openweathermap.org/img/wn/'+ data.weather[0].icon +'@2x.png'
     })
     .catch(error => dangerObj.style.display = 'block')
 })

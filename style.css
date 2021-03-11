@@ -3,7 +3,8 @@ body {
 }
 
 .search-container {
-    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 20%;
 }
 
@@ -21,4 +22,8 @@ body {
     height: 150px;
     width: 150px;
     margin: auto;
+}
+
+#feels-like {
+    font-size: small;
 }
