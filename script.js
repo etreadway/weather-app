@@ -10,6 +10,7 @@ var dangerObjClose = document.getElementById('close')
 // search button functionality
 buttonObj.addEventListener('click', function() {
     userLocation = document.getElementById('input').value;
+    userLocation = userLocation.split(' ').join('+')
     fetch('http://api.openweathermap.org/data/2.5/weather?zip='+userLocation+'&units=imperial&appid='+API_KEY)
     .then(response => response.json())
     .then(data => {
@@ -35,7 +36,7 @@ dangerObjClose.addEventListener('click', function(){
 function placeInfoOnPage(data) {
     document.getElementById('weather').innerHTML = data.weather['0'].description
     document.getElementById('temperature').innerHTML = Math.round(data.main.temp) + '&#8457'
-    document.getElementById('temperature').innerHTML = Math.round(data.main.feels_like) + '&#8457'
+    document.getElementById('feels-like').innerHTML = 'feels like ' + Math.round(data.main.feels_like) + '&#8457'
     document.getElementById('city').innerHTML = data.name
     document.getElementById('weather-icon').src = 'http://openweathermap.org/img/wn/'+ data.weather[0].icon +'@2x.png'
 

@@ -1,5 +1,6 @@
 body {
     background-color: #15202B;
+    
 }
 
 .search-container {
@@ -16,6 +17,8 @@ body {
     margin: auto;
     background-color: #3d3d3d;
     border-radius: 10%;
+    color: white;
+    
 }
 
 .card-img-top {
