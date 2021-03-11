@@ -2,17 +2,23 @@ body {
     background-color: #15202B;
 }
 
-#info-container {
-    background-color: #404040;
-    height:  = 200px;
-}
-
 .search-container {
     margin: 10px;
+    margin-top: 20%;
 }
-
-
 
 .alert-danger {
     display: none;
+}
+
+.card {
+    margin: auto;
+    background-color: #3d3d3d;
+    border-radius: 10%;
+}
+
+.card-img-top {
+    height: 150px;
+    width: 150px;
+    margin: auto;
 }
