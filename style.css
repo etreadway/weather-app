@@ -18,7 +18,7 @@ body {
     background-color: #3d3d3d;
     border-radius: 10%;
     color: white;
-    
+    display: ;
 }
 
 .card-img-top {
@@ -27,6 +27,6 @@ body {
     margin: auto;
 }
 
-#feels-like {
+.feels-like {
     font-size: small;
 }
