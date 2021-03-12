@@ -23,12 +23,14 @@ inputObj.addEventListener('keypress', function (e) {
 function newSearch() {
     userLocation = document.getElementById('input').value;
     userLocation = userLocation.split(' ').join('+')
+    // zip-code
     fetch('http://api.openweathermap.org/data/2.5/weather?zip='+userLocation+'&units=imperial&appid='+API_KEY)
     .then(response => response.json())
     .then(data => {
         makeNewCard(data)
         
     })
+    // city name
     .catch(error => fetch('http://api.openweathermap.org/data/2.5/weather?q='+userLocation+'&units=imperial&appid='+API_KEY)
             .then(response => response.json())
             .then(data => {
@@ -38,6 +40,7 @@ function newSearch() {
         )
 }
 
+// make a new card and append it to the search results
 function makeNewCard(data) {
     var newCard = document.createElement('div')
     newCard.className = 'card'
