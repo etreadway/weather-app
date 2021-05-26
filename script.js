@@ -1,4 +1,4 @@
-var API_KEY = config.API_KEY;
+var API_KEY = config.API_KEY || process.env.API_KEY;
 var userLocation = ''
 var inputObj = document.getElementById('input')
 var buttonObj = document.getElementById('button')
@@ -16,7 +16,7 @@ buttonObj.addEventListener('click', newSearch)
 // press enter to search
 inputObj.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-      newSearch()
+        newSearch()
     }
 });
 
@@ -24,14 +24,14 @@ function newSearch() {
     userLocation = document.getElementById('input').value;
     userLocation = userLocation.split(' ').join('+')
     // zip-code
-    fetch('http://api.openweathermap.org/data/2.5/weather?zip='+userLocation+'&units=imperial&appid='+API_KEY)
-    .then(response => response.json())
-    .then(data => {
-        makeNewCard(data)
-        
-    })
-    // city name
-    .catch(error => fetch('http://api.openweathermap.org/data/2.5/weather?q='+userLocation+'&units=imperial&appid='+API_KEY)
+    fetch('http://api.openweathermap.org/data/2.5/weather?zip=' + userLocation + '&units=imperial&appid=' + API_KEY)
+        .then(response => response.json())
+        .then(data => {
+            makeNewCard(data)
+
+        })
+        // city name
+        .catch(error => fetch('http://api.openweathermap.org/data/2.5/weather?q=' + userLocation + '&units=imperial&appid=' + API_KEY)
             .then(response => response.json())
             .then(data => {
                 makeNewCard(data)
@@ -48,7 +48,7 @@ function makeNewCard(data) {
 
     var newImg = document.createElement('img')
     newImg.className = 'card-img-top'
-    newImg.src = 'http://openweathermap.org/img/wn/'+ data.weather[0].icon +'@2x.png'
+    newImg.src = 'http://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png'
     newCard.append(newImg)
 
     var cardBody = document.createElement('div')
@@ -74,6 +74,6 @@ function makeNewCard(data) {
 }
 
 // alert danger close button
-dangerObjClose.addEventListener('click', function(){
+dangerObjClose.addEventListener('click', function () {
     dangerObj.style.display = 'none'
 })
