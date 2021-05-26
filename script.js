@@ -1,4 +1,4 @@
-var API_KEY = process.env.API_KEY;
+var API_KEY = config.API_KEY
 var userLocation = ''
 var inputObj = document.getElementById('input')
 var buttonObj = document.getElementById('button')
